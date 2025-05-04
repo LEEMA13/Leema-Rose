@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLENDER - Leema Rose</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        background: #000;
+        color: #aefcff;
+        overflow-x: hidden;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 48px;
+        margin-bottom: 40px;
+        color: #aefcff;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .image-box {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .image-box img {
+        width: 300px;
+        height: auto;
+        border: 5px solid #aefcff;
+        border-radius: 10px;
+      }
+
+      .skills {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      /* Apply styles to both buttons and styled anchor links */
+      .skills a {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(to right, #aefcff, #c4fff3);
+        border: none;
+        padding: 15px 20px;
+        border-radius: 12px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-weight: bold;
+        color: #000;
+        box-shadow: 0 0 10px #aefcff;
+        text-align: center;
+      }
+
+      .skills a:hover {
+        box-shadow: 0 0 25px #aefcff, 0 0 35px #aefcff;
+        transform: scale(1.05);
+      }
+
+      /* Bubbles */
+      .bubble {
+        position: fixed;
+        bottom: -50px;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(135deg, #00f7ff, #6effc5);
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: rise 10s infinite ease-in;
+        z-index: 0;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translateY(-120vh) scale(1);
+          opacity: 0;
+        }
+      }
+
+      .bubble:nth-child(even) {
+        background: linear-gradient(135deg, #00f7ff, #9dffe8);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BLENDER PROJECT</h1>
+    <div class="container">
+      <div class="image-box">
+        <img src="images/CITY.avif" alt="Skill Set Fairy" />
+      </div>
+      <div class="skills">
+        <a href="model1.html">TEA SHOP</a>
+        <a href="model2.html">CAR</a>
+        <a href="model3.html">EMPTY LIBRARY</a>
+      </div>
+    </div>
+
+    <!-- Bubble animation -->
+    <script>
+      const totalBubbles = 30;
+      for (let i = 0; i < totalBubbles; i++) {
+        const bubble = document.createElement("div");
+        bubble.classList.add("bubble");
+        bubble.style.left = Math.random() * 100 + "vw";
+        bubble.style.animationDuration = Math.random() * 5 + 5 + "s";
+        bubble.style.width = bubble.style.height =
+          Math.random() * 15 + 10 + "px";
+        document.body.appendChild(bubble);
+      }
+    </script>
+  </body>
+</html>
